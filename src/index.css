@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+:root,
+[data-accent="red"] {
+  --accent: #dc2626;
+  --accent-bright: #ef4444;
+  --accent-title: #f87171;
+  --accent-hex-3d: 0xef4444;
+  --accent-muted: rgba(220, 38, 38, 0.14);
+  --accent-border: rgba(239, 68, 68, 0.5);
+  --accent-border-subtle: rgba(239, 68, 68, 0.22);
+  --accent-glow: rgba(220, 38, 38, 0.22);
+}
+
+[data-accent="orange"] {
+  --accent: #d97706;
+  --accent-bright: #f59e0b;
+  --accent-title: #fbbf24;
+  --accent-hex-3d: 0xf59e0b;
+  --accent-muted: rgba(245, 158, 11, 0.14);
+  --accent-border: rgba(245, 158, 11, 0.52);
+  --accent-border-subtle: rgba(245, 158, 11, 0.24);
+  --accent-glow: rgba(245, 158, 11, 0.2);
+}
+
+[data-accent="blue"] {
+  --accent: #2563eb;
+  --accent-bright: #3b82f6;
+  --accent-title: #60a5fa;
+  --accent-hex-3d: 0x3b82f6;
+  --accent-muted: rgba(59, 130, 246, 0.14);
+  --accent-border: rgba(59, 130, 246, 0.52);
+  --accent-border-subtle: rgba(59, 130, 246, 0.24);
+  --accent-glow: rgba(59, 130, 246, 0.22);
+}
+
+[data-accent="purple"] {
+  --accent: #9333ea;
+  --accent-bright: #a855f7;
+  --accent-title: #c084fc;
+  --accent-hex-3d: 0xa855f7;
+  --accent-muted: rgba(168, 85, 247, 0.14);
+  --accent-border: rgba(168, 85, 247, 0.52);
+  --accent-border-subtle: rgba(168, 85, 247, 0.24);
+  --accent-glow: rgba(168, 85, 247, 0.22);
+}
+
+[data-accent="green"] {
+  --accent: #16a34a;
+  --accent-bright: #22c55e;
+  --accent-title: #4ade80;
+  --accent-hex-3d: 0x22c55e;
+  --accent-muted: rgba(34, 197, 94, 0.14);
+  --accent-border: rgba(34, 197, 94, 0.52);
+  --accent-border-subtle: rgba(34, 197, 94, 0.24);
+  --accent-glow: rgba(34, 197, 94, 0.22);
+}
+
+:root {
+  --bg-canvas: #07080b;
+  --bg-surface: #0c0e13;
+  --bg-card: #0e1016;
+  --bg-card-elevated: #151821;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+}
+
+[data-contrast="high"] {
+  --bg-canvas: #030305;
+  --bg-surface: #090a0e;
+  --bg-card: #0e1017;
+  --bg-card-elevated: #1a1d28;
+  --accent-border-subtle: rgba(255, 255, 255, 0.28);
+  --text-primary: #ffffff;
+  --text-secondary: #e4e4e7;
+  --text-muted: #b4b4bd;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: "Manrope", system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Architectural coordinate dot-matrix backdrop (distinct from plain square wireframe) */
+.bg-canvas-grid {
+  background-color: var(--bg-canvas);
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.014) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
+  background-size: 28px 28px, 112px 112px, 112px 112px;
+}
+
+/* Crisp engineering title styling without fuzzy neon blur */
+.card-title-accent {
+  color: var(--text-primary);
+  transition: color 180ms ease;
+}
+
+.group:hover .card-title-accent {
+  color: var(--accent-title);
+}
+
+/* Machined Bento Card Surface */
+.bento-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.022) 0%, rgba(255, 255, 255, 0) 42%), var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    border-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  border-color: var(--accent-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 12px 32px -14px var(--accent-glow);
+}
+
+.bento-card-intro {
+  border-color: var(--accent-border-subtle);
+}
+
+.bento-card-intro:hover {
+  border-color: var(--accent-bright);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 16px 40px -16px var(--accent-glow);
+}
+
+/* Reusable Animated Background Patterns (clipped inside cards) */
+.pattern-pixel-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.pixel-block {
+  background-color: var(--accent);
+  opacity: 0.16;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.group:hover .pixel-block {
+  opacity: 0.44;
+}
+
+@keyframes pixelShift {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.38;
+    transform: scale(1);
+  }
+}
+
+.pixel-animate {
+  animation: pixelShift 3.4s ease-in-out infinite;
+}
+
+.pattern-diagonal {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 12px,
+    var(--accent-border-subtle) 12px,
+    var(--accent-border-subtle) 14px
+  );
+  opacity: 0.45;
+  transition: opacity 220ms ease;
+}
+
+.group:hover .pattern-diagonal {
+  opacity: 0.9;
+}
+
+.pattern-dots {
+  background-image: radial-gradient(circle, var(--accent-border) 1.3px, transparent 1.3px);
+  background-size: 18px 18px;
+  opacity: 0.3;
+  transition: opacity 220ms ease;
+}
+
+.group:hover .pattern-dots {
+  opacity: 0.68;
+}
+
+@keyframes dotDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(4px, 4px, 0);
+  }
+}
+
+.dots-animate {
+  animation: dotDrift 9s ease-in-out infinite;
+}
+
+.pattern-circuit {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    radial-gradient(circle at 0 0, var(--accent-border) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  opacity: 0.45;
+  transition: opacity 220ms ease;
+}
+
+.group:hover .pattern-circuit {
+  opacity: 0.85;
+}
+
+.pattern-mesh {
+  background-image:
+    linear-gradient(to right, var(--accent-border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--accent-border-subtle) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, black 45%, transparent 85%);
+}
+
+/* Reduced motion compliance */
+[data-reduced-motion="true"] *,
+[data-reduced-motion="true"] *::before,
+[data-reduced-motion="true"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-animate,
+  .dots-animate {
+    animation: none !important;
+  }
+}
+
+/* Thin subtle scrollbar inside stack card / modals */
+.thin-scroll::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.thin-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+}
+
+.thin-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-bright);
+}

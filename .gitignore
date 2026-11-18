@@ -1,0 +1,19 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Local runtime & conversation/platform artifacts
+data/
+.aistudio/
+public/assets/aistudio/
+metadata.json
+bun.lock
+
+# Laravel backend dependencies & local config
+backend-laravel/vendor/
+backend-laravel/.env
