@@ -340,13 +340,13 @@ export function BentoDashboard({
           {/* Collage images positioned behind title */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
             <img
-              src="/src/assets/images/project_dpmis_lite_1795013814974.jpg"
+              src="/src/assets/images/dpmis_lite_preview.png"
               alt="DPMIS Lite interface preview"
               referrerPolicy="no-referrer"
               className="absolute -right-6 -top-4 h-44 w-64 rounded-lg object-cover opacity-55 rotate-3 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-1"
             />
             <img
-              src="/src/assets/images/project_hyperdiasense_1795013815025.jpg"
+              src="/src/assets/images/hyperdiasense_preview.png"
               alt="HyperDiaSense interface preview"
               referrerPolicy="no-referrer"
               className="absolute left-6 top-6 h-40 w-60 rounded-lg object-cover opacity-45 -rotate-3 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-1"

@@ -134,8 +134,8 @@ export function BentoHomepage({
                 <span className="text-zinc-400">Mac</span>
               </div>
 
-              <h1 className="mt-2 font-display text-2xl sm:text-[1.7rem] font-bold tracking-tight text-white leading-tight [text-wrap:balance]">
-                Software developer &amp; aspiring network engineer.
+              <h1 className="mt-2 font-display text-2xl sm:text-[1.6rem] font-bold tracking-tight text-white leading-tight [text-wrap:balance]">
+                Junior Software Developer, IT Technical Support &amp; Networking.
               </h1>
 
               <p className="mt-2.5 text-[13px] sm:text-sm leading-relaxed text-zinc-300">
@@ -407,13 +407,13 @@ export function BentoHomepage({
         >
           <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
             <img
-              src="/src/assets/images/project_dpmis_lite_1795013814974.jpg"
+              src="/src/assets/images/dpmis_lite_preview.png"
               alt=""
               referrerPolicy="no-referrer"
               className="absolute right-12 -top-2 h-16 w-24 rounded object-cover opacity-35 -rotate-6 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3"
             />
             <img
-              src="/src/assets/images/project_hyperdiasense_1795013815025.jpg"
+              src="/src/assets/images/hyperdiasense_preview.png"
               alt=""
               referrerPolicy="no-referrer"
               className="absolute -right-2 -bottom-2 h-16 w-24 rounded object-cover opacity-35 rotate-6 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
@@ -430,7 +430,7 @@ export function BentoHomepage({
           <ArrowUpRight className="relative z-10 h-4 w-4 text-zinc-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[var(--accent-title)]" />
         </article>
 
-        {/* 6. EDUCATION & CREDENTIAL FOCUS CARD (1 col x 1 row) */}
+        {/* 6. QUICK UPDATE CARD (1 col x 1 row) */}
         <article
           onClick={() => {
             playClickSound(soundEnabled);
@@ -444,18 +444,18 @@ export function BentoHomepage({
               onOpenSection('about');
             }
           }}
-          className="bento-card bento-animate group cursor-pointer lg:col-span-1 lg:row-span-1 p-4 flex flex-col justify-between min-h-[78px]"
+          className="bento-card bento-animate group cursor-pointer lg:col-span-1 lg:row-span-1 px-4 py-3 flex flex-col justify-between min-h-[78px]"
         >
           <div className="flex items-center justify-between gap-2">
             <h2 className="font-display text-sm font-bold card-title-accent">
-              B.S. Computer Science
+              Quick Update
             </h2>
             <span className="text-[10px] font-mono text-[var(--accent-title)]">
-              {PERSONAL_PROFILE.graduation}
+              Open to work
             </span>
           </div>
-          <p className="text-xs text-zinc-300 truncate">
-            {PERSONAL_PROFILE.university} · Philippines
+          <p className="text-xs text-zinc-300 leading-snug line-clamp-2">
+            Currently looking for a role that fits my skills and interests.
           </p>
         </article>
 

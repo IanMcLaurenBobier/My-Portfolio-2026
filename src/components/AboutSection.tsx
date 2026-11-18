@@ -18,6 +18,10 @@ export function AboutSection() {
         <p className="text-sm leading-relaxed text-zinc-400 max-w-3xl">
           {PERSONAL_PROFILE.aboutSecondary}
         </p>
+        <p className="text-sm leading-relaxed text-zinc-200 max-w-3xl">
+          <span className="font-semibold text-[var(--accent-title)]">Quick Update:</span>{' '}
+          I am currently looking for a Junior Software Developer, IT Technical Support, or Networking role that fits my skills and career goals.
+        </p>
 
         <div className="grid grid-cols-1 gap-4 pt-4 border-t border-white/10 sm:grid-cols-3">
           <div className="rounded-xl border border-white/10 bg-[#101015] p-4">
